@@ -15,10 +15,8 @@ public class JpaMain {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
 		try {
-			Member member = em.find(Member.class, 150L);
-			member.setName("AAAAA");
-
-			em.detach(member);
+			Member member = new Member(500L, "chan");
+			em.persist(member);
 
 			tx.commit();
 		} catch (Exception e) {
