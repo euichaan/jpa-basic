@@ -57,18 +57,3 @@ public class ExamMergeMain {
 		//==영속성 컨텍스트2 종료==//
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
