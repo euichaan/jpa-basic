@@ -1,22 +1,32 @@
 package hellojpa;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.TableGenerator;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+@TableGenerator(
+	name = "MEMBER_SEQ_GENERATOR",
+	table = "MY_SEQUENCES", // 매핑할 데이터베이스 시퀀스 이름
+	pkColumnName = "MEMBER_SEQ", allocationSize = 1
+)
 public class Member {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "MEMBER_SEQ_GENERATOR")
 	private Long id;
-	private String name;
 
-	public Member() {
-	}
-
-	public Member(Long id, String name) {
-		this.id = id;
-		this.name = name;
-	}
+	@Column(name = "name", nullable = false, length = 10)
+	private String username;
 
 	public Long getId() {
 		return id;
@@ -26,11 +36,11 @@ public class Member {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 }

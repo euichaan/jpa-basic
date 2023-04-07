@@ -1,12 +1,8 @@
 package hellojpa;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 public class ExamMergeMain {
 
+	/*
 	private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 
 	public static void main(String[] args) {
@@ -56,4 +52,5 @@ public class ExamMergeMain {
 		em2.close();
 		//==영속성 컨텍스트2 종료==//
 	}
+	 */
 }
